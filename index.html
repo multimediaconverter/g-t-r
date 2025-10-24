@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function redirectFromParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const goPath = urlParams.get('go');
+            if (goPath) {
+                const cleanPath = goPath.startsWith('/') ? goPath.substring(1) : goPath;
+                const targetURL = `https://oxelon.com/${cleanPath}`;
+                window.location.href = targetURL;
+            }
+        }
+        window.onload = redirectFromParam;
+    </script>
+</head>
+<body>
+</body>
+</html>
